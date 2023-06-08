@@ -1,0 +1,94 @@
+<mat-toolbar color="#eae4e4">
+  <span><button mat-button>Dashboard</button></span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button (click)="logout()">Logout</button>
+</mat-toolbar>
+
+<mat-form-field itemSize="50" class="example-viewport">
+  <mat-form-field class="Channel" fxFlex="15">
+    <mat-select
+      placeholder="Channel"
+      [(value)]="selectedStatus"
+      (selectionChange)="getChannelValue($event.value)"
+    >
+      <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Search me.."
+          #input
+        />
+      </mat-form-field>
+      <mat-option class="lable" *ngFor="let tags of tagList" [value]="tags.id">
+        {{ tags.organisation_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field fxFlex="15">
+    <mat-select
+      placeholder="Status"
+      [(value)]="selectedStatus"
+      (selectionChange)="getStatusValue($event.value)"
+    >
+      <mat-option *ngFor="let status of statusList" [value]="status.slug">
+        {{ status.display_name }}{{ status.count }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-icon
+    style="margin-left: 10px"
+    mat-raised-button
+    mat-button
+    fxLayoutAlign="space-between center"
+    class="reset-btn"
+    (click)="applyFilter($event)"
+    >cached</mat-icon
+  >
+  <div></div>
+  <table mat-table [dataSource]="dataSource" class="list">
+    <ng-container
+      *ngFor="let column of headerList"
+      matColumnDef="{{ column.slug }}"
+    >
+      <th mat-header-cell *matHeaderCellDef style="font-size: medium">
+        {{ column.display_name }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="column.slug != 'onboarded_on'">
+          {{ element[column.slug] }}
+        </div>
+        <div *ngIf="column.slug == 'onboarded_on'">
+          {{ element.onboarded_on | date : "yyyy-MM-dd HH:mm:ss" }}
+        </div>
+        <div
+          *ngIf="column.slug == 'quality'"
+          mat-raised-button
+          matTooltip="Assess the health of product data"
+          aria-label="Button that displays a tooltip when focused or hovered over"
+        >
+          {{ element.entity_code + element.sl_no }}
+        </div>
+        <div
+          fxLayoutAlign="space-between center"
+          *ngIf="column.slug === 'actions'"
+          mat-raised-button
+          matTooltip="View Channel quality"
+          aria-label="Button that displays a tooltip when focused or hovered over"
+        >
+          <mat-icon mat-raised-button color="accent">visibility</mat-icon>
+        </div>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [pageIndex]="1"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-form-field>

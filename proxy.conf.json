@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "https://v3-dev.datax.ai",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "error"
+  }
+}

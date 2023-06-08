@@ -1,0 +1,153 @@
+// colors
+$theme-blue: #1e2540;
+$theme-white: #f9f9f9;
+$theme-paragraph: #e3e3e3;
+$theme-header: #ffffff;
+$theme-button: #1475eb;
+$theme-input-bg: #2a3458;
+$theme-subheader: #b4b4b4;
+$theme-progress-success: #1ab06a;
+$theme-input-box: #d0cfce;
+$theme-black: #343434;
+$theme-table-header: #dee1e6;
+$theme-orange: #ff7d1d;
+$theme-green: #0ab06a;
+$theme-light-blue: #1475eb;
+// fonts
+$site-font: "Montserrat", sans-serif;
+$para-font: "Montserrat", sans-serif;
+
+:root {
+  /* Colors: */
+  --primary-05: #f8fbff;
+  --primary-10: #f4f9ff;
+  --primary-25: #e8f1fc;
+  --primary-50: #a7c9f2;
+  --primary-100: #5394e3;
+  --primary-200-default: #1475eb;
+  --primary-400: #0069ea;
+  --primary-600: #0052b7;
+  --filter-background: #e9ecef;
+  --light-table-heading: #dee1e6;
+  --light-error-high-emphasis: #ff3100;
+  --light-error-low-emphasis: #f78367;
+  --light-moderate: #e3af67;
+  --light-success-high-emphasis: #1ab06a;
+  --light-success-low-emphasis: #7bb79b;
+  --dark-on-primary-high-emphasis: #ffffff;
+  --dark-on-primary-mid-emphasis: #e3e3e3;
+  --dark-on-primary-low-emphasis: #b4b4b4;
+  --light-on-primary-high-emphasis: #343434;
+  --light-on-primary-mid-emphasis: #646464;
+  --light-on-primary-low-emphasis: #dbdbdb;
+  --light-bg: #f9f9f9;
+  --dark-on-surface-low-emphasis: #2a3458;
+  --dark-bg: #1e2540;
+
+  /* Font/text values */
+  --unnamed-font-family-montserrat: Montserrat;
+  --unnamed-font-style-normal: normal;
+  --unnamed-font-weight-600: 600px;
+  --unnamed-font-weight-800: 800px;
+  --unnamed-font-weight-bold: bold;
+  --unnamed-font-weight-normal: normal;
+  --unnamed-font-size-12: 12px;
+  --unnamed-font-size-14: 14px;
+  --unnamed-font-size-16: 16px;
+  --unnamed-character-spacing-0: 0px;
+  --unnamed-character-spacing-0-28: 0.28px;
+  --unnamed-line-spacing-20: 20px;
+  --unnamed-line-spacing-24: 24px;
+}
+
+/* Character Styles */
+.dark-h1 {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-800);
+  font-size: var(--unnamed-font-size-16);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-ffffff);
+}
+.dark-h2 {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-bold);
+  font-size: var(--unnamed-font-size-16);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-ffffff);
+}
+.dark-h3 {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-600);
+  font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0-28);
+  color: var(--unnamed-color-ffffff);
+}
+.dark-subtitle-1 {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-normal);
+  font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-e3e3e3);
+}
+.dark-body {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-normal);
+  font-size: var(--unnamed-font-size-12);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-e3e3e3);
+}
+.light-h1 {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-800);
+  font-size: var(--unnamed-font-size-16);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-343434);
+}
+.light-h2 {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-bold);
+  font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-343434);
+}
+.light-h3 {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-600);
+  font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-343434);
+}
+.light-body-1 {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-normal);
+  font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-646464);
+}
+.light-body-2 {
+  font-family: var(--unnamed-font-family-montserrat);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-normal);
+  font-size: var(--unnamed-font-size-12);
+  line-height: var(--unnamed-line-spacing-20);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-646464);
+}
