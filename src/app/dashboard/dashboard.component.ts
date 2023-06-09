@@ -28,11 +28,9 @@ export class DashboardComponent implements OnInit {
   labelList: any;
   displayedColumns: any;
   pageNumber: any;
-
   dataload!: boolean;
   channelList: any;
   selectedStatus: any;
-
   status: any;
   id: any;
   tags: any;
@@ -58,7 +56,6 @@ export class DashboardComponent implements OnInit {
   //   // { value: 'AD 2', viewValue: 'AD 2' },
   //   // { value: 'AD 3', viewValue: 'AD 3' },
   // ];
-
   // tableData: any = [
   //   {
   //     sl_no: 1,
@@ -171,17 +168,24 @@ export class DashboardComponent implements OnInit {
   // ];
 
   ngOnInit(): void {
-    this.pageNumber = this.page;
-    this.dataSource = new MatTableDataSource(this.dataSource);
     this.header();
-    this.getTable;
     this.chal();
-
     this.getstatus();
     this.getchannel();
+    this.getTable;
 
+    this.dataSource = new MatTableDataSource(this.dataSource);
     this.dataSource.paginator = this.paginator;
   }
+
+  resetFilters = () => {
+    this.selectedStatus = '';
+    this.status = '';
+    this.size = 5;
+    this.page = 1;
+    this.dataload = true;
+    this.getTable(this.page, this.size, this.selectedStatus);
+  };
 
   getStatusValue = (status: string) => {
     this.status = status.toUpperCase();
@@ -194,7 +198,6 @@ export class DashboardComponent implements OnInit {
   getChannelValue = (selectedStatus: any) => {
     this.size = 5;
     this.page = 1;
-
     this.getchanneltable(this.page, this.size, this.selectedStatus, this.id);
   };
 

@@ -62,7 +62,7 @@ export class AuthenticationService {
       })
     );
   };
-
+  
   getstatusList = (
     page: string | number | boolean,
     size: string | number | boolean,
